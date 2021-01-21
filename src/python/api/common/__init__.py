@@ -1,0 +1,1 @@
+from .domain import Serializable, ImmutableSerializable, MutableSerializable
