@@ -1,0 +1,356 @@
+{
+  "self": "https://codetecnologia.atlassian.net/rest/api/2/issue/20047",
+  "id": 20047,
+  "key": "LITY-45",
+  "changelog": {
+    "startAt": 0,
+    "maxResults": 0,
+    "total": 0,
+    "histories": null
+  },
+  "fields": {
+    "statuscategorychangedate": "2021-01-21T10:45:31.165-0300",
+    "issuetype": {
+      "self": "https://codetecnologia.atlassian.net/rest/api/2/issuetype/10157",
+      "id": 10157,
+      "description": "Uma parte pequena e distinta do trabalho.",
+      "iconUrl": "https://codetecnologia.atlassian.net/secure/viewavatar?size=medium&avatarId=10318&avatarType=issuetype",
+      "name": "Tarefa",
+      "subtask": false,
+      "fields": null,
+      "statuses": [],
+      "namedValue": "Tarefa"
+    },
+    "timespent": null,
+    "project": {
+      "self": "https://codetecnologia.atlassian.net/rest/api/2/project/10508",
+      "id": 10508,
+      "key": "LITY",
+      "name": "LITY",
+      "description": null,
+      "avatarUrls": {
+        "48x48": "https://codetecnologia.atlassian.net/secure/projectavatar?pid=10508&avatarId=10603",
+        "24x24": "https://codetecnologia.atlassian.net/secure/projectavatar?size=small&s=small&pid=10508&avatarId=10603",
+        "16x16": "https://codetecnologia.atlassian.net/secure/projectavatar?size=xsmall&s=xsmall&pid=10508&avatarId=10603",
+        "32x32": "https://codetecnologia.atlassian.net/secure/projectavatar?size=medium&s=medium&pid=10508&avatarId=10603"
+      },
+      "issuetypes": null,
+      "projectCategory": null,
+      "email": null,
+      "lead": null,
+      "components": null,
+      "versions": null,
+      "projectTypeKey": "software",
+      "simplified": false
+    },
+    "customfield_10032": null,
+    "fixVersions": [],
+    "aggregatetimespent": null,
+    "resolution": null,
+    "customfield_10035": null,
+    "customfield_10036": null,
+    "customfield_10037": null,
+    "customfield_10027": null,
+    "customfield_10028": null,
+    "resolutiondate": null,
+    "workratio": -1,
+    "lastViewed": null,
+    "issuerestriction": {
+      "issuerestrictions": {},
+      "shouldDisplay": false
+    },
+    "watches": {
+      "self": "https://codetecnologia.atlassian.net/rest/api/2/issue/LITY-45/watchers",
+      "watchCount": 2,
+      "isWatching": false
+    },
+    "customfield_10061": null,
+    "created": 1611169394709,
+    "customfield_10020": null,
+    "customfield_10021": [
+      {
+        "id": 436,
+        "name": "Demandas Lity 2",
+        "state": "active",
+        "boardId": 517,
+        "goal": "",
+        "startDate": "2021-01-19T18:58:18.336Z",
+        "endDate": "2021-01-21T21:05:00.000Z"
+      }
+    ],
+    "customfield_10022": "1|i00006:x",
+    "customfield_10100": null,
+    "priority": {
+      "self": "https://codetecnologia.atlassian.net/rest/api/2/priority/10004",
+      "id": 10004,
+      "name": "Medium",
+      "iconUrl": "https://codetecnologia.atlassian.net/images/icons/priorities/medium.svg",
+      "namedValue": "Medium"
+    },
+    "customfield_10023": [],
+    "customfield_10101": null,
+    "customfield_10102": null,
+    "labels": [],
+    "customfield_10016": null,
+    "customfield_10017": null,
+    "customfield_10018": {
+      "hasEpicLinkFieldDependency": false,
+      "showField": false,
+      "nonEditableReason": {
+        "reason": "PLUGIN_LICENSE_ERROR",
+        "message": "O link pai s\u00f3 est\u00e1 dispon\u00edvel para usu\u00e1rios do Jira Premium."
+      }
+    },
+    "customfield_10019": "2021-01-21T18:20:12.953-0300",
+    "aggregatetimeoriginalestimate": null,
+    "timeestimate": null,
+    "versions": [],
+    "issuelinks": [],
+    "assignee": {
+      "self": "https://codetecnologia.atlassian.net/rest/api/2/user?accountId=5f4434c03aa35b003f4e4bea",
+      "name": null,
+      "key": null,
+      "accountId": "5f4434c03aa35b003f4e4bea",
+      "emailAddress": null,
+      "avatarUrls": {
+        "48x48": "https://secure.gravatar.com/avatar/98fa7a5702055401e98c659596bd3132?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FMC-5.png",
+        "24x24": "https://secure.gravatar.com/avatar/98fa7a5702055401e98c659596bd3132?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FMC-5.png",
+        "16x16": "https://secure.gravatar.com/avatar/98fa7a5702055401e98c659596bd3132?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FMC-5.png",
+        "32x32": "https://secure.gravatar.com/avatar/98fa7a5702055401e98c659596bd3132?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FMC-5.png"
+      },
+      "displayName": "Mateus Canelhas",
+      "active": true,
+      "timeZone": "America/Sao_Paulo",
+      "groups": null,
+      "locale": null,
+      "accountType": "atlassian"
+    },
+    "updated": 1611264012953,
+    "status": {
+      "self": "https://codetecnologia.atlassian.net/rest/api/2/status/10133",
+      "description": "Este status \u00e9 gerido internamente pelo Jira Software",
+      "iconUrl": "https://codetecnologia.atlassian.net/",
+      "name": "Teste QA",
+      "untranslatedName": null,
+      "id": 10133,
+      "statusCategory": {
+        "self": "https://codetecnologia.atlassian.net/rest/api/2/statuscategory/2",
+        "id": 2,
+        "key": "new",
+        "colorName": "blue-gray",
+        "name": "Itens Pendentes"
+      },
+      "untranslatedNameValue": null
+    },
+    "components": [],
+    "timeoriginalestimate": null,
+    "description": "Ao enviar o e-mail de pontua\u00e7\u00e3o para o cliente, se o cliente n\u00e3o puder resgatar uma oferta est\u00e1 exibindo a mensagem \u201cN\u00e3o pode resgatar\u201d deve ser alterada para \u201cFaltam x pontos\u201d sendo x a quantidade de pontos que faltam para poder resgatar a oferta.\n\n!image-20210120-190336.png|width=1026,height=546!",
+    "customfield_10010": null,
+    "customfield_10057": null,
+    "customfield_10014": null,
+    "customfield_10058": null,
+    "customfield_10015": null,
+    "customfield_10059": null,
+    "timetracking": {
+      "originalEstimate": null,
+      "remainingEstimate": null,
+      "timeSpent": null,
+      "originalEstimateSeconds": 0,
+      "remainingEstimateSeconds": 0,
+      "timeSpentSeconds": 0
+    },
+    "customfield_10005": null,
+    "customfield_10006": null,
+    "security": null,
+    "customfield_10007": null,
+    "customfield_10008": null,
+    "customfield_10009": null,
+    "attachment": [
+      {
+        "self": "https://codetecnologia.atlassian.net/rest/api/2/attachment/13507",
+        "id": 13507,
+        "filename": "image-2021-01-20-16-02-54-586.png",
+        "author": {
+          "self": "https://codetecnologia.atlassian.net/rest/api/2/user?accountId=5f4fd609ea5e2f0039060bbe",
+          "name": null,
+          "key": null,
+          "accountId": "5f4fd609ea5e2f0039060bbe",
+          "emailAddress": null,
+          "avatarUrls": {
+            "48x48": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/5f4fd609ea5e2f0039060bbe/f186b6c0-860c-4277-8e7e-ac84f396f3fc/48",
+            "24x24": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/5f4fd609ea5e2f0039060bbe/f186b6c0-860c-4277-8e7e-ac84f396f3fc/24",
+            "16x16": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/5f4fd609ea5e2f0039060bbe/f186b6c0-860c-4277-8e7e-ac84f396f3fc/16",
+            "32x32": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/5f4fd609ea5e2f0039060bbe/f186b6c0-860c-4277-8e7e-ac84f396f3fc/32"
+          },
+          "displayName": "Dayane Pina",
+          "active": true,
+          "timeZone": "America/Sao_Paulo",
+          "groups": null,
+          "locale": null,
+          "accountType": "atlassian"
+        },
+        "created": 1611169377270,
+        "size": 41652,
+        "mimeType": "image/png",
+        "content": "https://codetecnologia.atlassian.net/secure/attachment/13507/image-2021-01-20-16-02-54-586.png"
+      },
+      {
+        "self": "https://codetecnologia.atlassian.net/rest/api/2/attachment/13508",
+        "id": 13508,
+        "filename": "image-20210120-190336.png",
+        "author": {
+          "self": "https://codetecnologia.atlassian.net/rest/api/2/user?accountId=5f4fd609ea5e2f0039060bbe",
+          "name": null,
+          "key": null,
+          "accountId": "5f4fd609ea5e2f0039060bbe",
+          "emailAddress": null,
+          "avatarUrls": {
+            "48x48": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/5f4fd609ea5e2f0039060bbe/f186b6c0-860c-4277-8e7e-ac84f396f3fc/48",
+            "24x24": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/5f4fd609ea5e2f0039060bbe/f186b6c0-860c-4277-8e7e-ac84f396f3fc/24",
+            "16x16": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/5f4fd609ea5e2f0039060bbe/f186b6c0-860c-4277-8e7e-ac84f396f3fc/16",
+            "32x32": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/5f4fd609ea5e2f0039060bbe/f186b6c0-860c-4277-8e7e-ac84f396f3fc/32"
+          },
+          "displayName": "Dayane Pina",
+          "active": true,
+          "timeZone": "America/Sao_Paulo",
+          "groups": null,
+          "locale": null,
+          "accountType": "atlassian"
+        },
+        "created": 1611169518060,
+        "size": 41652,
+        "mimeType": "image/png",
+        "content": "https://codetecnologia.atlassian.net/secure/attachment/13508/image-20210120-190336.png"
+      }
+    ],
+    "aggregatetimeestimate": null,
+    "summary": "E-mail > Alterar \"N\u00e3o pode resgatar\" para \"Faltam x pontos\"",
+    "creator": {
+      "self": "https://codetecnologia.atlassian.net/rest/api/2/user?accountId=5f4fd609ea5e2f0039060bbe",
+      "name": null,
+      "key": null,
+      "accountId": "5f4fd609ea5e2f0039060bbe",
+      "emailAddress": null,
+      "avatarUrls": {
+        "48x48": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/5f4fd609ea5e2f0039060bbe/f186b6c0-860c-4277-8e7e-ac84f396f3fc/48",
+        "24x24": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/5f4fd609ea5e2f0039060bbe/f186b6c0-860c-4277-8e7e-ac84f396f3fc/24",
+        "16x16": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/5f4fd609ea5e2f0039060bbe/f186b6c0-860c-4277-8e7e-ac84f396f3fc/16",
+        "32x32": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/5f4fd609ea5e2f0039060bbe/f186b6c0-860c-4277-8e7e-ac84f396f3fc/32"
+      },
+      "displayName": "Dayane Pina",
+      "active": true,
+      "timeZone": "America/Sao_Paulo",
+      "groups": null,
+      "locale": null,
+      "accountType": "atlassian"
+    },
+    "subtasks": [],
+    "reporter": {
+      "self": "https://codetecnologia.atlassian.net/rest/api/2/user?accountId=5f4fd609ea5e2f0039060bbe",
+      "name": null,
+      "key": null,
+      "accountId": "5f4fd609ea5e2f0039060bbe",
+      "emailAddress": null,
+      "avatarUrls": {
+        "48x48": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/5f4fd609ea5e2f0039060bbe/f186b6c0-860c-4277-8e7e-ac84f396f3fc/48",
+        "24x24": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/5f4fd609ea5e2f0039060bbe/f186b6c0-860c-4277-8e7e-ac84f396f3fc/24",
+        "16x16": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/5f4fd609ea5e2f0039060bbe/f186b6c0-860c-4277-8e7e-ac84f396f3fc/16",
+        "32x32": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/5f4fd609ea5e2f0039060bbe/f186b6c0-860c-4277-8e7e-ac84f396f3fc/32"
+      },
+      "displayName": "Dayane Pina",
+      "active": true,
+      "timeZone": "America/Sao_Paulo",
+      "groups": null,
+      "locale": null,
+      "accountType": "atlassian"
+    },
+    "customfield_10043": null,
+    "customfield_10044": null,
+    "aggregateprogress": {
+      "progress": 0,
+      "total": 0
+    },
+    "customfield_10000": "{}",
+    "customfield_10001": null,
+    "customfield_10045": null,
+    "customfield_10002": null,
+    "customfield_10046": null,
+    "customfield_10047": null,
+    "customfield_10003": null,
+    "customfield_10004": null,
+    "environment": null,
+    "duedate": null,
+    "progress": {
+      "progress": 0,
+      "total": 0
+    },
+    "comment": {
+      "maxResults": 1,
+      "total": 1,
+      "startAt": 0,
+      "comments": [
+        {
+          "self": "https://codetecnologia.atlassian.net/rest/api/2/issue/20047/comment/14123",
+          "id": 14123,
+          "author": {
+            "self": "https://codetecnologia.atlassian.net/rest/api/2/user?accountId=5f4434c03aa35b003f4e4bea",
+            "name": null,
+            "key": null,
+            "accountId": "5f4434c03aa35b003f4e4bea",
+            "emailAddress": null,
+            "avatarUrls": {
+              "48x48": "https://secure.gravatar.com/avatar/98fa7a5702055401e98c659596bd3132?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FMC-5.png",
+              "24x24": "https://secure.gravatar.com/avatar/98fa7a5702055401e98c659596bd3132?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FMC-5.png",
+              "16x16": "https://secure.gravatar.com/avatar/98fa7a5702055401e98c659596bd3132?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FMC-5.png",
+              "32x32": "https://secure.gravatar.com/avatar/98fa7a5702055401e98c659596bd3132?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FMC-5.png"
+            },
+            "displayName": "Mateus Canelhas",
+            "active": true,
+            "timeZone": "America/Sao_Paulo",
+            "groups": null,
+            "locale": null,
+            "accountType": "atlassian"
+          },
+          "body": "teste",
+          "renderedBody": null,
+          "updateAuthor": {
+            "self": "https://codetecnologia.atlassian.net/rest/api/2/user?accountId=5f4434c03aa35b003f4e4bea",
+            "name": null,
+            "key": null,
+            "accountId": "5f4434c03aa35b003f4e4bea",
+            "emailAddress": null,
+            "avatarUrls": {
+              "48x48": "https://secure.gravatar.com/avatar/98fa7a5702055401e98c659596bd3132?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FMC-5.png",
+              "24x24": "https://secure.gravatar.com/avatar/98fa7a5702055401e98c659596bd3132?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FMC-5.png",
+              "16x16": "https://secure.gravatar.com/avatar/98fa7a5702055401e98c659596bd3132?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FMC-5.png",
+              "32x32": "https://secure.gravatar.com/avatar/98fa7a5702055401e98c659596bd3132?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FMC-5.png"
+            },
+            "displayName": "Mateus Canelhas",
+            "active": true,
+            "timeZone": "America/Sao_Paulo",
+            "groups": null,
+            "locale": null,
+            "accountType": "atlassian"
+          },
+          "created": 1611264012953,
+          "updated": 1611264012953,
+          "visibility": null
+        }
+      ],
+      "last": false
+    },
+    "votes": {
+      "self": "https://codetecnologia.atlassian.net/rest/api/2/issue/LITY-45/votes",
+      "votes": 0,
+      "hasVoted": false
+    },
+    "worklog": {
+      "maxResults": 20,
+      "total": 0,
+      "startAt": 0,
+      "worklogs": [],
+      "last": false
+    }
+  },
+  "renderedFields": null
+}
