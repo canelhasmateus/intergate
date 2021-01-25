@@ -1,43 +1,55 @@
 from __future__ import annotations
 
-from intergate.apis import discord, jira
-from intergate.types import URL
+from typing import List
+from intergate.apis.discord.domain import Footer, Image, Field
+from intergate.apis.discord.pointcut import DiscordMessageFunction
+from intergate.apis.jira.domain import JiraEvent
+from intergate.types.alias import URL
 
 
-class Assets:
+class JiraAssets:
 	LOGO_JIRA: URL = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLT_6JKK6ca5KZEg2BwsBXMZdggGvHEFFB3g&usqp=CAU"
 	ICON_ATLASSIAN: URL = "https://symbols.getvecta.com/stencil_85/33_jira-icon.6a60be29f8.png"
+	ICON_TASK: URL = "https://e7.pngegg.com/pngimages/441/504/png-clipart-jira-issue-tracking-system-atlassian-technical-support-computer-icons-consent-angle-text-thumbnail.png"
 
 
-class MessageFactory( discord.pointcut.MessageFactory[ jira.Event ] ):
+class JiraMessageFunction( DiscordMessageFunction[ JiraEvent ] ):
 
-	def to_content( self, payload: jira.Event ):
+	def to_content( self, payload: JiraEvent ):
 		return None
 
-	def to_author( self, payload: jira.Event ):
+	def to_field_list( self, payload: JiraEvent ) -> List[ Field ]:
+		reporter = payload.fieldDict.reporter
+		creator = payload.fieldDict.creator
+		assignee = payload.fieldDict.assignee
+
+		return [
+
+				Field( name = "Creator", value = creator.displayName if creator else " - " ),
+				Field( name = "Reporter", value = reporter.displayName if reporter else " - " ),
+				Field( name = "Assignee", value = assignee.displayName if assignee else " - " )
+				]
+
+	def to_author( self, payload: JiraEvent ):
 		return None
 
-	def to_thumbnail( self, payload: jira.Event ):
-		return discord.Image( url = Assets.LOGO_JIRA )
+	def to_thumbnail( self, payload: JiraEvent ):
+		return Image( url = JiraAssets.LOGO_JIRA )
 
-	def to_field_list( self, payload: jira.Event ):
-		# TODO  22/01/2021 mentions
-		return [ ]
-
-	def to_footer( self, payload: jira.Event ):
-		return discord.Footer(
+	def to_footer( self, payload: JiraEvent ):
+		return Footer(
 				text = f" [{payload.fieldDict.status.name}] {payload.key} ",
-				icon_url = Assets.ICON_ATLASSIAN
+				icon_url = JiraAssets.ICON_ATLASSIAN
 				)
 
-	def to_title( self, payload: jira.Event ):
-		return f"[JIRA] {payload.fieldDict.project.name}"
+	def to_title( self, payload: JiraEvent ):
+		return f"{payload.fieldDict.project.name}"
 
-	def to_url( self, payload: jira.Event ):
+	def to_url( self, payload: JiraEvent ):
 		return None
 
-	def to_color( self, payload: jira.Event ):
+	def to_color( self, payload: JiraEvent ):
 		return None
 
-	def to_description( self, payload: jira.Event ):
+	def to_description( self, payload: JiraEvent ):
 		return None

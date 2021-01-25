@@ -1,3 +1,8 @@
 .idea/
 *.pyc
 venv/
+/bin/
+/conf/
+/jre/
+/lib/
+/.scannerwork/

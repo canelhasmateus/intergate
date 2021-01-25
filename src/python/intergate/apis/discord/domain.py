@@ -2,12 +2,13 @@ from __future__ import annotations
 
 from enum import Enum
 from typing import Optional, List
-
+import pydantic
+from pydantic.main import BaseModel
 import requests
 
-from intergate.types import (Immutable, URL,
-                             Integer, String, Boolean, Isotime, HexColor, Function,
-                             )
+from intergate.types.alias import String, URL, Integer, Boolean, Isotime, HexColor
+from intergate.types.data import Immutable
+from intergate.types.functional import Function
 
 
 class Footer( Immutable ):
@@ -23,8 +24,8 @@ class Image( Immutable ):
 
 class Field( Immutable ):
 	name: String
-	value: String
-	inline: Optional[ Boolean ]
+	value: Optional[String]
+	inline: Optional[ Boolean ] = True
 
 
 class Author( Immutable ):
@@ -36,7 +37,7 @@ class EmbedTypes( Enum ):
 	RICH = "rich"
 
 
-class Embed( Immutable ):
+class Embed( BaseModel ):
 	title: Optional[ String ] = None
 	description: Optional[ String ] = None
 	type: Optional[ String ] = EmbedTypes.RICH.value
@@ -49,15 +50,12 @@ class Embed( Immutable ):
 	image: Optional[ Image ] = None
 	thumbnail: Optional[ Image ] = None
 	author: Optional[ Author ] = None
-	fieldList: Optional[ List[ Field ] ] = None
+	fieldList: List[ Field ] = pydantic.Field
 
-	class Config:
-		fields = { "fieldList": "field" }
-
-
-class Message( Immutable ):
+class DiscordMessage( Immutable ):
 	content: Optional[ String ] = None
 	embeds: List[ Embed ] = [ ]
 
 
-Messager = Function[ Message, requests.Response ]
+
+DiscordMessager = Function[ DiscordMessage, requests.Response ]
