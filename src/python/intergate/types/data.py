@@ -4,10 +4,7 @@ from pydantic.main import BaseModel
 
 
 class Immutable( BaseModel ):
-	class Config:
-		arbitrary_types_allowed = True
-
+	pass
 
 class Mutable( BaseModel ):
-	class Config:
-		arbitrary_types_allowed = True
+	pass

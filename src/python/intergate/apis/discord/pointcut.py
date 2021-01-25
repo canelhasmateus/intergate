@@ -2,6 +2,7 @@ import abc
 from typing import Generic, List, Optional, T
 
 from intergate.apis.discord import domain as discord
+from intergate.apis.discord.domain import Embed
 from intergate.types.alias import String, URL, Integer
 
 
@@ -22,7 +23,7 @@ class DiscordMessageClosure( Generic[ T ] ):
 		url: Optional[ URL ] = self.to_url( payload )
 		color: Optional[ Integer ] = self.to_color( payload )
 		description: Optional[ String ] = self.to_description( payload )
-		embed: discord.Embed = discord.Embed( author = author,
+		embed: Embed = Embed( author = author,
 				title = title, url = url, thumbnail = thumb,
 				description = description,
 				fieldList = fieldList,

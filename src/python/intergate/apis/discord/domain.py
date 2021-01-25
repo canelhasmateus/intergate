@@ -2,7 +2,8 @@ from __future__ import annotations
 
 from enum import Enum
 from typing import Optional, List
-
+import pydantic
+from pydantic.main import BaseModel
 import requests
 
 from intergate.types.alias import String, URL, Integer, Boolean, Isotime, HexColor
@@ -23,8 +24,8 @@ class Image( Immutable ):
 
 class Field( Immutable ):
 	name: String
-	value: String
-	inline: Optional[ Boolean ]
+	value: Optional[String]
+	inline: Optional[ Boolean ] = True
 
 
 class Author( Immutable ):
@@ -36,7 +37,7 @@ class EmbedTypes( Enum ):
 	RICH = "rich"
 
 
-class Embed( Immutable ):
+class Embed( BaseModel ):
 	title: Optional[ String ] = None
 	description: Optional[ String ] = None
 	type: Optional[ String ] = EmbedTypes.RICH.value
@@ -49,11 +50,7 @@ class Embed( Immutable ):
 	image: Optional[ Image ] = None
 	thumbnail: Optional[ Image ] = None
 	author: Optional[ Author ] = None
-	fieldList: Optional[ List[ Field ] ] = None
-
-	class Config:
-		fields = { "fieldList": "field" }
-
+	fieldList: List[ Field ] = pydantic.Field
 
 class DiscordMessage( Immutable ):
 	content: Optional[ String ] = None

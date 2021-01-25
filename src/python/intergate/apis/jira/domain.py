@@ -55,9 +55,9 @@ class Fields( Immutable ):
 	issueType: IssueType
 	project: Project
 	status: Status
-	creator: User
-	reporter: User
-
+	creator: Optional[User]
+	reporter: Optional[User]
+	assignee: Optional[User]
 	class Config:
 		fields = { "issueType": "issuetype" }
 
@@ -79,7 +79,6 @@ class CommentHolder( Immutable ):
 
 
 class CommentFields( Fields ):
-	assignee: Optional[ User ]
 	comment: Optional[ CommentHolder ]
 
 
