@@ -6,10 +6,10 @@ from typing import Optional, Type, Dict
 
 from pydantic.main import Extra
 
-from intergate.types import Immutable, String, URL, Isotime
-
-
 # region enums
+from intergate.types.alias import String, URL, Isotime
+from intergate.types.data import Immutable
+
 
 class CheckRunStatuses( Enum ):
 	QUEUED = "queued"
@@ -73,14 +73,14 @@ class Sender( Immutable ):
 
 # region events
 
-class Event( Immutable ):
+class GithubEvent( Immutable ):
 	action: Actions
 
 	class Config:
 		extra = Extra.allow
 
 
-class ReleaseEvent( Event ):
+class ReleaseEvent( GithubEvent ):
 	action: Actions
 	release: Release
 	sender: Sender
@@ -125,8 +125,8 @@ class ReleaseEvent( Event ):
 
 # TODO  22/01/2021 implement match ( :Pattern )
 
-_action_mapping: Dict[ Actions, Type[ Event ] ] = (
-		defaultdict( lambda: Event ))
+_action_mapping: Dict[ Actions, Type[ GithubEvent ] ] = (
+		defaultdict( lambda: GithubEvent ))
 
 _action_mapping[ Actions.PUBLISHED ] = ReleaseEvent
 # endregion

@@ -5,9 +5,15 @@ from typing import Dict
 import flask
 import requests
 
-from intergate.apis import discord, github, jira
-from intergate.types import Integer, URL, HttpMethods, Function
-from intergate.web import aspects
+from intergate.apis.discord.domain import DiscordMessager, DiscordMessage
+from intergate.apis.discord.service import DiscordSenderClosure
+from intergate.apis.github.domain import ReleaseEvent
+from intergate.apis.jira.domain import JiraEvent, CommentEvent, TransitionEvent
+from intergate.types.alias import Integer, URL
+from intergate.types.functional import Function
+from intergate.types.http import HttpMethods
+from intergate.web.aspects.github.discord import GithubMessageClosure
+from intergate.web.aspects.jira.discord import JiraMessageClosure
 
 
 class Webserver:
@@ -23,16 +29,16 @@ class Webserver:
 		self.discordUrl = discordUrl
 
 		# TODO  23/01/2021 make these methods easily over-rideable
-		self.send_message: discord.Messager = discord.Sender( self.discordUrl )
-		self.to_github_message: Function[ Dict, discord.Message ] = aspects.github.discord.MessageFactory()
-		self.to_jira_message: Function[ Dict, discord.Message ] = aspects.jira.discord.MessageFactory()
+		self.send_message: DiscordMessager = DiscordSenderClosure( self.discordUrl )
+		self.to_github_message: Function[ Dict, DiscordMessage ] = GithubMessageClosure()
+		self.to_jira_message: Function[ Dict, DiscordMessage ] = JiraMessageClosure()
 
 		@self.app.route( '/github', methods = [ HttpMethods.POST.value ] )
 		def github_listen() -> flask.Response:
 			response: requests.Response = (
 					self.send_message(
 							self.to_github_message(
-									github.ReleaseEvent( **flask.request.json ) ) )
+									ReleaseEvent( **flask.request.json ) ) )
 			)
 
 			return flask.Response( response )
@@ -42,9 +48,28 @@ class Webserver:
 			response: requests.Response = (
 					self.send_message(
 							self.to_jira_message(
-									jira.Event( **flask.request.json ) ) )
+									JiraEvent( **flask.request.json ) ) )
 			)
 			return flask.Response( response )
+
+		@self.app.route( "/jira/comment", methods = [ HttpMethods.POST.value ] )
+		def jira_comment() -> flask.Response:
+			response: requests.Response = (
+					self.send_message(
+							self.to_jira_message(
+									CommentEvent( **flask.request.json ) ) )
+			)
+			return flask.Response( response )
+
+		@self.app.route( "/jira/transition", methods = [ HttpMethods.POST.value ] )
+		def jira_transition() -> flask.Response:
+			response: requests.Response = (
+					self.send_message(
+							self.to_jira_message(
+									TransitionEvent( **flask.request.json ) ) )
+			)
+			return flask.Response( response )
+
 
 
 if __name__ == "__main__":

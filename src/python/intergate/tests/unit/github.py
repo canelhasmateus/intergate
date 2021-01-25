@@ -1,11 +1,9 @@
-import pathlib
 from typing import Dict
 
-from intergate import tests
-from intergate.apis import github
+from intergate.apis.github.domain import ReleaseEvent
+from intergate.tests.utils.example import example_generator, EXAMPLES_PATH as EXAMPLES_PATH
 
-examplesPath: pathlib.Path = tests.example.PATH
 example: Dict
 
-for example in tests.example.generator( examplesPath / "github", glob = "github-release-*.json" ):
-	print( github.ReleaseEvent( **example ) )
+for example in example_generator( EXAMPLES_PATH / "github", glob = "github-release-*.json" ):
+	print( ReleaseEvent( **example ) )

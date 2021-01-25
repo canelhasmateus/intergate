@@ -1,11 +1,12 @@
 import json
+import os
 import pathlib
 from typing import Iterable, Dict
 
-from intergate.types import String
+from intergate.types.alias import String
 
 
-def generator( path: pathlib.Path, glob: String ):
+def example_generator( path: pathlib.Path, glob: String ):
 	exampleList: Iterable[ pathlib.Path ] = path.glob( glob )
 	for example in exampleList:
 		payload: Dict
@@ -16,4 +17,4 @@ def generator( path: pathlib.Path, glob: String ):
 		yield payload
 
 
-PATH = pathlib.Path( '../example' )
+EXAMPLES_PATH = pathlib.Path( os.path.dirname(os.path.realpath(__file__))).parent /  "example"

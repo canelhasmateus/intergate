@@ -1,18 +1,18 @@
 import os
-import pathlib
 import threading
 from typing import Dict
 
 import requests
 
-from intergate import web, tests
-from intergate.types import Integer, String
-
 # region webserver
+from intergate.tests.utils.example import EXAMPLES_PATH as EXAMPLES_PATH, example_generator
+from intergate.types.alias import Integer, String
+from intergate.web.server import Webserver
+
 port: Integer = 80
-discordUrl = os.environ[ "DISCORD_URL" ]
-thread = threading.Thread( target = web.Server( port = port,
-		discordUrl = discordUrl,
+DISCORD_URL = os.environ[ "DISCORD_URL" ]
+thread = threading.Thread( target = Webserver( port = port,
+		discordUrl = DISCORD_URL,
 		jiraDomain = "..." ) )
 thread.start()
 # endregion
@@ -20,16 +20,22 @@ thread.start()
 # region aliases
 example: Dict
 localserver: String = f"http://localhost:{port}"
-examplesPath: pathlib.Path = tests.example.PATH
 
 send_post = lambda resource, json: requests.post( f"{localserver}/{resource}",
 		json = json )
 # endregion
 
-for example in tests.example.generator( examplesPath / "github", "github-*.json" ):
+for example in example_generator( EXAMPLES_PATH / "github", "github-*.json" ):
 	print( send_post( "github",
 			json = example ) )
 
-for example in tests.example.generator( examplesPath / "jira", "jira-*.json" ):
+for example in example_generator( EXAMPLES_PATH / "jira", "jira-*.json" ):
 	print( send_post( "jira",
 			json = example ) )
+
+for example in example_generator( EXAMPLES_PATH / "jira", "jira-*.json" ):
+	print( send_post( "jira",
+			json = example ) )
+
+
+

@@ -4,29 +4,15 @@ from typing import List, Optional
 
 from pydantic import Extra
 
-from intergate.types import Immutable, URL, String, Integer
-
-
 # region Common
+from intergate.types.alias import String, URL, Integer
+from intergate.types.data import Immutable
 
 
 class IssueType( Immutable ):
 	name: String
 	self: URL
 	iconUrl: URL
-
-
-class Project( Immutable ):
-	self: URL
-	key: String
-	name: String
-
-
-class Status( Immutable ):
-	self: URL
-	description: String
-	iconUrl: URL
-	name: String
 
 
 class AvatarHolder( Immutable ):
@@ -42,6 +28,20 @@ class AvatarHolder( Immutable ):
 				"x32": "32x32",
 				"x48": "48x48",
 				}
+
+
+class Project( Immutable ):
+	self: URL
+	key: String
+	name: String
+	avatarUrls: AvatarHolder
+
+
+class Status( Immutable ):
+	self: URL
+	description: String
+	iconUrl: URL
+	name: String
 
 
 class User( Immutable ):
@@ -83,7 +83,7 @@ class CommentFields( Fields ):
 	comment: Optional[ CommentHolder ]
 
 
-class Event( Immutable ):
+class JiraEvent( Immutable ):
 	self: URL
 	key: String
 	fieldDict: Fields
@@ -93,7 +93,7 @@ class Event( Immutable ):
 		fields = { "fieldDict": "fields" }
 
 
-class CommentEvent( Event ):
+class CommentEvent( JiraEvent ):
 	fieldDict: CommentFields
 
 
@@ -105,7 +105,7 @@ class StatusFields( Fields ):
 	pass
 
 
-class StatusEvent( Event ):
+class TransitionEvent( JiraEvent ):
 	fieldDict: StatusFields
 
 	class Config:

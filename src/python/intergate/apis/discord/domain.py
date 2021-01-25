@@ -5,9 +5,9 @@ from typing import Optional, List
 
 import requests
 
-from intergate.types import (Immutable, URL,
-                             Integer, String, Boolean, Isotime, HexColor, Function,
-                             )
+from intergate.types.alias import String, URL, Integer, Boolean, Isotime, HexColor
+from intergate.types.data import Immutable
+from intergate.types.functional import Function
 
 
 class Footer( Immutable ):
@@ -55,9 +55,9 @@ class Embed( Immutable ):
 		fields = { "fieldList": "field" }
 
 
-class Message( Immutable ):
+class DiscordMessage( Immutable ):
 	content: Optional[ String ] = None
 	embeds: List[ Embed ] = [ ]
 
 
-Messager = Function[ Message, requests.Response ]
+DiscordMessager = Function[ DiscordMessage, requests.Response ]

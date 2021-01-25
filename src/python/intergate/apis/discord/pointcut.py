@@ -1,16 +1,16 @@
 import abc
 from typing import Generic, List, Optional, T
 
-from intergate.apis import discord
-from intergate.types import String, URL, Integer
+from intergate.apis.discord import domain as discord
+from intergate.types.alias import String, URL, Integer
 
 
-class MessageFactory( Generic[ T ] ):
+class DiscordMessageClosure( Generic[ T ] ):
 
-	def __call__( self, payload: T ) -> discord.Message:
+	def __call__( self, payload: T ) -> discord.DiscordMessage:
 		content = self.to_content( payload )
 		embedList = self.to_embed_list( payload )
-		return discord.Message( content = content,
+		return discord.DiscordMessage( content = content,
 				embeds = embedList )
 
 	def to_embed_list( self, payload: T ) -> List[ discord.Embed ]:
